@@ -71,10 +71,10 @@ public class Password {
         if (n < 12) {
             return false;
         }
-        bool contientMaj = false;
-        bool contientMin = false;
-        bool contientnb = false;
-        bool contientespace = false;
+        Boolean contientMaj = false;
+        Boolean contientMin = false;
+        Boolean contientnb = false;
+        Boolean contientespace = false;
         char c;
 
         for (int i = 0; i < password.length(); i++) {
@@ -105,9 +105,19 @@ public class Password {
      */
     public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
 
-        // Code here
+        HashMap<String, Boolean> resultat = new HashMap<>();
+        String curr_password;
+        for(i=0; i < passwords.length(); i++){
+            curr_password = passwords.get(i)
+            if(isStrongPassword(curr_password)){
+                resultat.put(curr_password, true);
+            }
+            else{
+                resultat.put(curr_password, false);
+            }
+        }
 
-        return null;
+        return resultat;
     }
 
     /**
